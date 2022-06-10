@@ -1,7 +1,7 @@
+//í•¨ìˆ˜ 
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
-#include<ctype.h>
 #include"functions.h"
 
 #define SIZE 200
@@ -21,14 +21,14 @@ int menu()
 
 	int n;
 
-	printf("¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ\n");
-	printf("1. ÀÔ·Â\n");
-	printf("2. °Ë»ö\n");
-	printf("3. ¼öÁ¤\n");
-	printf("4. Á¾·á\n");
-	printf("¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ\n");
+	printf("ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡\n");
+	printf("1. ì…ë ¥\n");
+	printf("2. ê²€ìƒ‰\n");
+	printf("3. ìˆ˜ì •\n");
+	printf("4. ì¢…ë£Œ\n");
+	printf("ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡\n");
 
-	printf("ÀÔ·Â: ");
+	printf("ì…ë ¥: ");
 	scanf("%d", &n);
 
 	return n;
@@ -44,7 +44,7 @@ void search(FILE *fp)
 
 	fseek(fp, 0, SEEK_SET);
 	getchar();
-	printf("±¹°¡ÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+	printf("êµ­ê°€ì˜ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 
 	gets_s(key, SIZE);
 	while (!feof(fp))
@@ -52,14 +52,14 @@ void search(FILE *fp)
 		fread(&data.name, sizeof(data), 1, fp);
 		if (strcmp(data.name, key) == 0)
 		{
-			printf("È®ÁøÀÚ ¼ö: %s\n", data.total);
-			printf("¹é½Å Á¢Á¾ÀÚ¼ö: %s\n", data.vac);
-			printf("¹é½Å Á¢Á¾ºñÀ²(%%): %.1f\n", data.vp);
+			printf("í™•ì§„ì ìˆ˜: %s\n", data.total);
+			printf("ë°±ì‹  ì ‘ì¢…ììˆ˜: %s\n", data.vac);
+			printf("ë°±ì‹  ì ‘ì¢…ë¹„ìœ¨(%%): %.1f\n", data.vp);
 			break;
 		}
 		else
 		{
-			printf("±¹°¡ %s ÀÌ(°¡) Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n", key);
+			printf("êµ­ê°€ %s ì´(ê°€) ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n", key);
 			break;
 		}
 	}
@@ -74,14 +74,14 @@ void add(FILE *fp)
 
 	getchar();
 	input:
-	printf("±¹°¡¸í: ");
+	printf("êµ­ê°€ëª…: ");
 	gets_s(data.name, SIZE);
-	printf("È®ÁøÀÚ ¼ö: ");
+	printf("í™•ì§„ì ìˆ˜: ");
 	gets_s(data.total, SIZE);
-	printf("¹é½Å Á¢Á¾ÀÚ¼ö: ");
+	printf("ë°±ì‹  ì ‘ì¢…ììˆ˜: ");
 	gets_s(data.vac, SIZE);
 
-	printf("¹é½Å Á¢Á¾ºñÀ²(%%): ");
+	printf("ë°±ì‹  ì ‘ì¢…ë¹„ìœ¨(%%): ");
 	scanf("%f", &tmp);
 
 	fwrite(&data, sizeof(data), 1, fp);
