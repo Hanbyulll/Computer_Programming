@@ -1,0 +1,8 @@
+﻿  functions.c
+D:\Codes\VS\Assignment\Assignment\functions.h(1,1): warning C4828: 파일에 0x81 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 949).
+D:\Codes\VS\Assignment\Assignment\functions.c(141,7): warning C4013: 'exit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  main.c
+D:\Codes\VS\Assignment\Assignment\functions.h(1,1): warning C4828: 파일에 0x81 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 949).
+D:\Codes\VS\Assignment\Assignment\main.c(26,7): warning C4013: 'exit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  코드를 생성하고 있습니다...
+  Assignment.vcxproj -> D:\Codes\VS\Assignment\x64\Debug\Assignment.exe
