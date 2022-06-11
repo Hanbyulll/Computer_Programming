@@ -1,34 +1,34 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include"functions.h" //functions.c »ç¿ëÀ» À§ÇÑ Çì´õ
+#include"functions.h" //functions.c ì‚¬ìš©ì„ ìœ„í•œ í—¤ë”
 
 /*
 
-202201079 ±èÇÑº°
-¼¼°è ÁÖ¿ä ±¹°¡º° ÄÚ·Î³ª19 È®ÁøÀÚ ¼ö, ¹é½Å Á¢Á¾ÀÚ¼ö, Á¢Á¾·ü ÇöÈ²
-±¹°¡º° È®ÁøÀÚ ¼ö, ¹é½Å Á¢Á¾ÀÚ¼ö, Á¢Á¾·üÀÇ Á¤º¸ Á¶È¸, °Ë»ö, Ãß°¡ ±â´ÉÀ» Á¦°øÇÔ.
+202201079 ê¹€í•œë³„
+ì„¸ê³„ ì£¼ìš” êµ­ê°€ë³„ ì½”ë¡œë‚˜19 í™•ì§„ìž ìˆ˜, ë°±ì‹  ì ‘ì¢…ìžìˆ˜, ì ‘ì¢…ë¥  í˜„í™©
+êµ­ê°€ë³„ í™•ì§„ìž ìˆ˜, ë°±ì‹  ì ‘ì¢…ìžìˆ˜, ì ‘ì¢…ë¥ ì˜ ì •ë³´ ì¡°íšŒ, ê²€ìƒ‰, ì¶”ê°€ ê¸°ëŠ¥ì„ ì œê³µí•¨.
 
-ÇÊ¿äÇÑ ÇÔ¼öµéÀ» ¼³¸í°ú ÇÔ²² functions.c ¿¡ Á¤ÀÇÇØ ³õ¾ÒÀ½. 
+í•„ìš”í•œ í•¨ìˆ˜ë“¤ì„ ì„¤ëª…ê³¼ í•¨ê»˜ functions.c ì— ì •ì˜í•´ ë†“ì•˜ìŒ. 
 
 */
 
 int main(void)
 {
-	int in_list[4] = { 1, 2, 3, 4 }; //ÀÔ·Â°¡´É ¸ñ·Ï(¹è¿­ È°¿ë)
+	int in_list[4] = { 1, 2, 3, 4 }; //ìž…ë ¥ê°€ëŠ¥ ëª©ë¡(ë°°ì—´ í™œìš©)
 
-	FILE* fp; //ÆÄÀÏ Æ÷ÀÎÅÍ Á¤ÀÇ(Æ÷ÀÎÅÍ »ç¿ë)
-	fp = fopen("list.bin", "a+"); //µ¥ÀÌÅÍ°¡ ÀÔ·ÂµÈ ÆÄÀÏ(ÆÄÀÏ ÀÔÃâ·Â È°¿ë)
-	//list.bin ÀÇ ³»¿ëÀº ¹Ì¸® Á¤ÀÇµÇ¾î ÀÖÀ½.
+	FILE* fp; //íŒŒì¼ í¬ì¸í„° ì •ì˜(í¬ì¸í„° ì‚¬ìš©)
+	fp = fopen("list.bin", "a+"); //ë°ì´í„°ê°€ ìž…ë ¥ëœ íŒŒì¼(íŒŒì¼ ìž…ì¶œë ¥ í™œìš©)
+	//list.bin ì˜ ë‚´ìš©ì€ ë¯¸ë¦¬ ì •ì˜ë˜ì–´ ìžˆìŒ.
 
 	if (fp == NULL)
 	{
-		fprintf(stderr, "ÆÄÀÏÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.\n");
+		fprintf(stderr, "íŒŒì¼ì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
 		exit(1);
 	}
 
 	while (1)
 	{
-		void (*pf)(FILE *fp); //ÇÔ¼ö Æ÷ÀÎÅÍ »ç¿ë(Æ÷ÀÎÅÍ È°¿ë)
+		void (*pf)(FILE *fp); //í•¨ìˆ˜ í¬ì¸í„° ì‚¬ìš©(í¬ì¸í„° ì‚¬ìš©, í¬ì¸í„° í™œìš©)
 		int input = menu();
 
 		if (input == in_list[0])
@@ -49,7 +49,7 @@ int main(void)
 		else if (input == in_list[3])
 			goto exit;
 		else
-			printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.\n");
+			printf("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤.\n");
 	}
 
 exit:
@@ -58,7 +58,7 @@ exit:
 }
 /*
 
-list.bin ¿¡ ¹Ì¸® Á¤ÀÇµÈ ±¹°¡µé:
-¹Ì±¹, Ä³³ª´Ù, µ¶ÀÏ, ÇÁ¶û½º, Æú¶õµå, ¿µ±¹, ³×´ú¶õµå, ½ºÆäÀÎ, ÅÍÅ°, ÀÌÅ»¸®¾Æ, ·¯½Ã¾Æ, ÀÏº», ÇÑ±¹, ´ë¸¸, ÀÎµµ
+list.bin ì— ë¯¸ë¦¬ ì •ì˜ëœ êµ­ê°€ë“¤:
+ë¯¸êµ­, ìºë‚˜ë‹¤, ë…ì¼, í”„ëž‘ìŠ¤, í´ëž€ë“œ, ì˜êµ­, ë„¤ëœëž€ë“œ, ìŠ¤íŽ˜ì¸, í„°í‚¤, ì´íƒˆë¦¬ì•„, ëŸ¬ì‹œì•„, ì¼ë³¸, í•œêµ­, ëŒ€ë§Œ, ì¸ë„
 
 */
